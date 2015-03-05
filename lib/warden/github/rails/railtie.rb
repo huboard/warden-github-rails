@@ -38,7 +38,7 @@ module Warden
 
         def setup_failure_app(config)
           config.failure_app = lambda do |env|
-            [403, {}, [env['warden'].message]]
+            [403, {}, [env['warden.options'][:message]]]
           end
         end
       end
